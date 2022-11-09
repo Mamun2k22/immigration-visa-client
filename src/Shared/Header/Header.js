@@ -15,14 +15,15 @@ const Header = () => {
 
             </div>
             <div className="flex-none">
-                <ul className="menu menu-horizontal p-3">
+                <ul className="menu menu-horizontal p-2">
                     <li><Link to='/home'>Home</Link></li>
                     <li tabIndex={0}>
 
                         <li><Link to='/services'>Services</Link></li>
-                        <ul className="p-2 bg-base-100">
-                            <li><a>Services 1</a></li>
-                            <li><a>Services 2</a></li>
+                        <ul className="p-1 bg-base-100">
+                            <Link className="p-1"><li>Services 1</li></Link>
+                            <Link className="p-1"><li>Services 2</li></Link>
+
                         </ul>
                     </li>
                     <li><Link to='/blog'>Blog</Link></li>

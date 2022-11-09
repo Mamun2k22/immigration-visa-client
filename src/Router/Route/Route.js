@@ -1,5 +1,6 @@
 import Blog from "../../components/Blog";
 import Home from "../../components/Home";
+import Services from "../../components/Services/Services";
 import Main from "../../Layout/Main";
 import Footer from "../../Shared/Footer/Footer";
 
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog></Blog>
+            },
+            {
+                path: '/services',
+                element: <Services></Services>
             },
         ]
     }

@@ -1,0 +1,50 @@
+[
+    {
+        "service_id": "01",
+        "title": "Student Visa",
+        "img": "https://visahub.wporganic.com/elementor/wp-content/uploads/2019/02/visa-1.jpg",
+        "price": "2020.00",
+        "rating": "4.7",
+        "description": "Studying In The canada The generom repetition jected humour, or non-characteristic words etc."
+    },
+    {
+        "service_id": "02",
+        "title": "Business Visa",
+        "img": "https://visahub.wporganic.com/elementor/wp-content/uploads/2019/02/visa-2.jpg",
+        "price": "2000.00",
+        "rating": "4.8",
+        "description": "Business Visa Quam semper simple dummy eleifend lorem in imperdiet mauri et efficitur lorem ipsum."
+    },
+    {
+        "service_id": "03",
+        "title": "Job Seeker Visa",
+        "img": "https://visahub.wporganic.com/elementor/wp-content/uploads/2019/02/visa-3.jpg",
+        "price": "3200.00",
+        "rating": "4.9",
+        "description": "Duis id quam semper, eleifend lorem in, imperdiet mauris simple estibulum imple et efficitur nunc."
+    },
+    {
+        "service_id": "04",
+        "title": "Tourist & Visitor Visa",
+        "img": "https://visahub.wporganic.com/elementor/wp-content/uploads/2019/02/visa-4.jpg",
+        "price": "1500.00",
+        "rating": "4.6",
+        "description": "Suspendisse lobortis eros ac blan mi aliquet justo sit amet aliquet nunc simple dummy content risus a felis."
+    },
+    {
+        "service_id": "05",
+        "title": "Family Visa",
+        "img": "https://webdevcode.com/wp/eastend-demo/wp-content/uploads/2020/03/services44.jpg",
+        "price": "2330.00",
+        "rating": "4.5",
+        "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don’t look even more slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn’t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks."
+    },
+    {
+        "service_id": "06",
+        "title": "Immigrate Visa",
+        "img": "https://webdevcode.com/wp/eastend-demo/wp-content/uploads/2020/03/services66.jpg",
+        "price": "4320.00",
+        "rating": "5.0",
+        "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don’t look even more slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn’t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks."
+    }
+]
