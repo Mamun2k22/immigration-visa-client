@@ -15,7 +15,7 @@ const Header = () => {
 
             </div>
             <div className="flex-none">
-                <ul className="menu menu-horizontal p-2">
+                <ul className="menu menu-horizontal p-2 justify-center">
                     <li><Link to='/home'>Home</Link></li>
                     <li tabIndex={0}>
 
@@ -26,6 +26,8 @@ const Header = () => {
 
                         </ul>
                     </li>
+                    <li><Link to='/login'>Login</Link></li>
+                    <li><Link to='/register'>Register</Link></li>
                     <li><Link to='/blog'>Blog</Link></li>
                 </ul>
             </div>
