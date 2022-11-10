@@ -1,7 +1,33 @@
-import React, { } from 'react';
-import { Link, } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useLocation, useNavigate, } from 'react-router-dom';
+import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
+    const { login } = useContext(AuthContext)
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const from = location.state?.from?.pathname || '/';
+
+    const handleLogin = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+        login(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                navigate(from, { replace: true });
+            })
+            .then(error => console.error(error));
+
+
+
+
+    }
+
 
     return (
         <div className="hero py-20">
@@ -12,7 +38,7 @@ const Login = () => {
                 </div>
                 <div className="card w-full max-w-sm shadow-2xl bg-base-100 py-20">
                     <h1 className="text-5xl text-center font-bold">Login now</h1>
-                    <form onSubmit="" className="card-body">
+                    <form onSubmit={handleLogin} className="card-body">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -32,7 +58,7 @@ const Login = () => {
                             <input className="btn btn-primary" type="submit" value="Login" />
                         </div>
                     </form>
-                    <p className='text-center'>New to genius car <Link className='text-orange-600 font-bold' to={'/signup'}> Sign Up</Link> </p>
+                    <p className='text-center'>New to Immigration <Link className='text-orange-600 font-bold' to={'/signup'}> Sign Up</Link> </p>
                 </div>
             </div>
         </div>

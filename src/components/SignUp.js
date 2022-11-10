@@ -17,6 +17,8 @@ const SignUp = () => {
                 console.log(user);
             })
             .catch(err => console.error(err));
+
+
     }
     return (
         <div className="hero py-20">

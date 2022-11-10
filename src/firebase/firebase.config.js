@@ -13,6 +13,15 @@ const firebaseConfig = {
     appId: process.env.REACT_APP_appId,
 };
 
+// const firebaseConfig = {
+//     apiKey: "AIzaSyD6bATnZjE2HGsHE34ECr96vtKO8P2kNXg",
+//     authDomain: "immigration-visa-client.firebaseapp.com",
+//     projectId: "immigration-visa-client",
+//     storageBucket: "immigration-visa-client.appspot.com",
+//     messagingSenderId: "714825467716",
+//     appId: "1:714825467716:web:ebaabb7fe60241951a7911"
+// };
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export default app;

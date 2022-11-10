@@ -1,23 +1,97 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+
 
 const ServicesDetails = () => {
     const servicesDetails = useLoaderData()
-    const { title, description } = servicesDetails;
-    console.log(servicesDetails);
+    const { user } = useContext(AuthContext)
+    const { title, description, img, _id } = servicesDetails;
+
+    // ffjj
+
+    const placeReview = event => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const ratting = parseInt(form.ratting.value);
+        const feedback = form.feedback.value;
+        const email = user?.email || 'Unragister';
+
+        const review = {
+            service: _id,
+            serviceTitle: title,
+            serviceImg: img,
+            reviewerName: name,
+            ratting,
+            feedback,
+            email,
+            userImg: user.photoURL,
+        };
+
+        fetch('https://photograghy-server.vercel.app/reviews', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(review)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.acknowledged) {
+                    alert.success('Review Add Successfully')
+                    form.reset()
+
+                }
+            })
+            .catch(err => console.log(err));
+    }
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row">
-                    <img src="https://placeimg.com/260/400/arch" className="max-w-sm rounded-lg shadow-2xl" />
+                    <img src={img} alt="" className="max-w-sm rounded-lg shadow-2xl" />
                     <div>
                         <h1 className="text-5xl font-bold">{title}</h1>
                         <p className="py-6">{description}</p>
-                        <button className="btn btn-primary">Get Started</button>
+                        <label htmlFor="my-modal-4" className="btn">open modal</label>
                     </div>
                 </div>
             </div>
-        </div>
+
+
+            <div>
+
+                {/* Put this part before </body> tag */}
+                <input type="checkbox" id="my-modal-4" className="modal-toggle" />
+                <label htmlFor="my-modal-4" className="modal cursor-pointer">
+                    <label className="modal-box relative" htmlFor="">
+
+                        <form data-aos="zoom-in-down" onSubmit="">
+                            <div>
+                                <div className='grid lg:ml-20 lg:grid-cols-2  grid-cols-1 gap-5 mt-5 '>
+                                    <input type="text" name='name' placeholder="Name" className="input input-bordered input-sm w-full " required />
+                                    <input type="text" name='ratting' placeholder="ratting" className="input input-bordered input-sm w-full " required />
+                                    <textarea required className="textarea textarea-primary"
+                                        name='feedback'
+                                        placeholder="Type your feedback">
+
+                                    </textarea>
+                                    <input type="email" placeholder="email" defaultValue={user?.email} className="input input-bordered input-sm w-full " readOnly />
+                                    <button className="btn btn-active btn-secondary " type='submit'>Place Review</button>
+                                </div>
+                                <div className='text-center mt-5'>
+
+                                </div>
+                            </div>
+                        </form>
+                    </label>
+                </label>
+
+            </div>
+
+        </div >
     );
 };
 

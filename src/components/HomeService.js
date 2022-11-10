@@ -5,9 +5,10 @@ import SingleCard from './SingleCard';
 
 const HomeService = () => {
     const [services, setServices] = useState([]);
+    console.log(services);
 
     useEffect(() => {
-        fetch('http://localhost:5000/services/home')
+        fetch('http://localhost:5000/home')
             .then(res => res.json())
             .then(data => setServices(data));
     }, [])
