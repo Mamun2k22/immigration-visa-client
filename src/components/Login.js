@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate, } from 'react-router-dom';
+import { setAuthToken } from '../api/auth';
 import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
@@ -18,6 +19,11 @@ const Login = () => {
         login(email, password)
             .then(result => {
                 const user = result.user;
+                // const currentUser = {
+                //     email: user.email
+
+                // }
+                setAuthToken(user)
                 console.log(user);
                 navigate(from, { replace: true });
             })

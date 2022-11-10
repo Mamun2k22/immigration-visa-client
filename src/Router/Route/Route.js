@@ -1,6 +1,7 @@
 import Blog from "../../components/Blog";
 import Home from "../../components/Home";
 import Login from "../../components/Login";
+import MyReview from "../../components/MyReview";
 import Services from "../../components/Services/Services";
 import ServicesDetails from "../../components/Services/ServicesDetails";
 import SignUp from "../../components/SignUp";
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
         path: '/',
         element: <Main></Main>,
         children: [
+            {
+                path: '/',
+                element: <Home></Home>
+            },
             {
                 path: '/home',
                 element: <Home></Home>
@@ -42,6 +47,10 @@ const router = createBrowserRouter([
             {
                 path: '/signup',
                 element: <SignUp></SignUp>
+            },
+            {
+                path: '/myreview',
+                element: <MyReview></MyReview>
             },
         ]
     }

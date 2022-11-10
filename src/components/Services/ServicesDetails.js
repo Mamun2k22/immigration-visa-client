@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
@@ -7,7 +7,16 @@ const ServicesDetails = () => {
     const servicesDetails = useLoaderData()
     const { user } = useContext(AuthContext)
     const { title, description, img, _id } = servicesDetails;
+    const [feedbacks, setFeedbacks] = useState([])
 
+
+    useEffect(() => {
+        fetch('http://localhost:5000/allreviews')
+            .then(res => res.json())
+            .then(data => setFeedbacks(data))
+
+
+    }, []);
     // ffjj
 
     const placeReview = event => {
@@ -29,7 +38,7 @@ const ServicesDetails = () => {
             userImg: user.photoURL,
         };
 
-        fetch('https://photograghy-server.vercel.app/reviews', {
+        fetch('http://localhost:5000/reviews', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -40,7 +49,7 @@ const ServicesDetails = () => {
             .then(data => {
                 console.log(data)
                 if (data.acknowledged) {
-                    alert.success('Review Add Successfully')
+                    // alert.success('Review Add Successfully')
                     form.reset()
 
                 }
@@ -68,7 +77,7 @@ const ServicesDetails = () => {
                 <label htmlFor="my-modal-4" className="modal cursor-pointer">
                     <label className="modal-box relative" htmlFor="">
 
-                        <form data-aos="zoom-in-down" onSubmit="">
+                        <form data-aos="zoom-in-down" onSubmit={placeReview}>
                             <div>
                                 <div className='grid lg:ml-20 lg:grid-cols-2  grid-cols-1 gap-5 mt-5 '>
                                     <input type="text" name='name' placeholder="Name" className="input input-bordered input-sm w-full " required />
@@ -89,6 +98,35 @@ const ServicesDetails = () => {
                     </label>
                 </label>
 
+            </div>
+
+            <div>
+                <div>
+                    <h1 data-aos="zoom-in-down" className='px-4 text-center text-2xl sm:text-5xl md:text-3xl lg:text-5xl font-semibold my-10  '> <span className='text-orange-500'>Service </span> Feedback <br />
+                    </h1>
+                    <thead>
+                        <tr>
+
+                            <th> services Name</th>
+                            <th>Feedback</th>
+                            <th>Ratting</th>
+
+                        </tr>
+                    </thead>
+
+
+                    <>
+                        {
+                            feedbacks.map(fdb =>
+                                <Feedback
+                                    key={fdb._id}
+                                    fdb={fdb}
+                                ></Feedback>)
+                        }
+
+
+                    </>
+                </div>
             </div>
 
         </div >
