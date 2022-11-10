@@ -65,7 +65,7 @@ const ServicesDetails = () => {
                     <div>
                         <h1 className="text-5xl font-bold">{title}</h1>
                         <p className="py-6">{description}</p>
-                        <label htmlFor="my-modal-4" className="btn">open modal</label>
+                        <label htmlFor="my-modal-4" className="btn">Add Review</label>
                     </div>
                 </div>
             </div>
