@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const { login } = useContext();
@@ -26,7 +27,7 @@ const Login = () => {
         <div className="hero py-20">
             <div className="hero-content gap-20 grid md:grid-cols-2 flex-col lg:flex-row">
                 <div className="text-center lg:text-left">
-                    <img className='w-3/4' src={img} alt="" />
+                    <img className='w-3/4' src="https://webdevcode.com/wp/eastend-demo/wp-content/uploads/2020/03/about-contact-left.jpg" alt="" />
 
                 </div>
                 <div className="card w-full max-w-sm shadow-2xl bg-base-100 py-20">
