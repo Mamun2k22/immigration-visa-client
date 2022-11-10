@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch()
+    }
     return (
 
 
@@ -26,10 +34,30 @@ const Header = () => {
 
                         </ul>
                     </li>
-                    <li><Link to='/login'>Login</Link></li>
-                    <li><Link to='/signup'>Signup</Link></li>
+
+
+                    {
+                        user?.uid ?
+                            <> <li><Link to='/myreview'>My Review</Link></li>
+                                <li>
+                                    <button onClick={handleLogOut} className='btn-ghost'>Sign Out</button>
+                                </li>
+
+                            </>
+                            :
+                            <>
+                                <li>
+
+                                    <li><Link to='/login'>Login</Link></li>
+                                    <li><Link to='/signup'>Signup</Link></li>
+
+                                </li>
+
+                            </>
+
+                    }
                     <li><Link to='/blog'>Blog</Link></li>
-                    <li><Link to='/myreview'>My Review</Link></li>
+
 
                 </ul>
             </div>
@@ -39,3 +67,4 @@ const Header = () => {
 };
 
 export default Header;
+
