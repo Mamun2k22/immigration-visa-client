@@ -1,4 +1,11 @@
-# Project Setup:
+Client Site: https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-Mamun2k22
+
+Server Site: https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-Mamun2k22
+
+Live: https://immigration-visa-client.web.app
+
+# 
+Project Setup:
 1. Setup the Project name immigration and Visa Consultant
 2. Create route
 3. Create Home page and make Header with footer
