@@ -2,9 +2,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import Feedback from '../Feedback';
+import useTitle from '../hooks/usetitle';
 
 
 const ServicesDetails = () => {
+    useTitle("servicedetails")
     const servicesDetails = useLoaderData()
     const { user } = useContext(AuthContext)
     const { title, description, img, _id } = servicesDetails;
@@ -12,7 +14,7 @@ const ServicesDetails = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/allreviews')
+        fetch('https://immigration-visa-server.vercel.app/all/reviews')
             .then(res => res.json())
             .then(data => setFeedbacks(data))
 
@@ -39,7 +41,7 @@ const ServicesDetails = () => {
             userImg: user.photoURL,
         };
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://immigration-visa-server.vercel.app/reviews', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

@@ -2,8 +2,11 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate, } from 'react-router-dom';
 import { setAuthToken } from '../api/auth';
 import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
+import Google from './Google';
+import useTitle from './hooks/usetitle';
 
 const Login = () => {
+    useTitle("login")
     const { login } = useContext(AuthContext)
     const location = useLocation();
     const navigate = useNavigate();
@@ -65,7 +68,9 @@ const Login = () => {
                         </div>
                     </form>
                     <p className='text-center'>New to Immigration <Link className='text-orange-600 font-bold' to={'/signup'}> Sign Up</Link> </p>
+                    <Google></Google>
                 </div>
+
             </div>
         </div>
     );

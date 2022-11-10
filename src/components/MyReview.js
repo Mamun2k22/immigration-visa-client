@@ -8,7 +8,7 @@ const MyReview = () => {
     const [reviews, setReviews] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+        fetch(`https://immigration-visa-server.vercel.app/reviews?email=${user?.email}`)
 
             .then(res => {
                 return res.json()
@@ -22,7 +22,7 @@ const MyReview = () => {
     const handelDeeted = id => {
         const proced = window.confirm('Are You Sure')
         if (proced) {
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://immigration-visa-server.vercel.app/reviews/${id}`, {
                 method: "DELETE",
             })
                 .then(res => res.json())

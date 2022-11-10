@@ -8,7 +8,7 @@ const HomeService = () => {
     console.log(services);
 
     useEffect(() => {
-        fetch('http://localhost:5000/home')
+        fetch('https://immigration-visa-server.vercel.app/home')
             .then(res => res.json())
             .then(data => setServices(data));
     }, [])

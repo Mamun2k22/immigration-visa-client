@@ -2,6 +2,7 @@ import Blog from "../../components/Blog";
 import Home from "../../components/Home";
 import Login from "../../components/Login";
 import MyReview from "../../components/MyReview";
+import PrivateRoute from "../../components/PrivateRoute";
 import Services from "../../components/Services/Services";
 import ServicesDetails from "../../components/Services/ServicesDetails";
 import SignUp from "../../components/SignUp";
@@ -37,8 +38,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/servicesdetails/:id',
-                element: <ServicesDetails></ServicesDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                element: <PrivateRoute><ServicesDetails></ServicesDetails></PrivateRoute>,
+                loader: ({ params }) => fetch(`https://immigration-visa-server.vercel.app/services/${params.id}`)
             },
             {
                 path: '/login',
@@ -50,7 +51,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/myreview',
-                element: <MyReview></MyReview>
+                element: <PrivateRoute><MyReview></MyReview></PrivateRoute>
             },
         ]
     }

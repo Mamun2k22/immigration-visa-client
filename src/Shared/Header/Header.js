@@ -28,11 +28,11 @@ const Header = () => {
                     <li tabIndex={0}>
 
                         <li><Link to='/services'>Services</Link></li>
-                        <ul className="p-1 bg-base-100">
+                        {/* <ul className="p-1 bg-base-100">
                             <Link className="p-1"><li>Services 1</li></Link>
                             <Link className="p-1"><li>Services 2</li></Link>
 
-                        </ul>
+                        </ul> */}
                     </li>
 
 
