@@ -1,4 +1,5 @@
 import Blog from "../../components/Blog";
+import Error from "../../components/Error";
 import Home from "../../components/Home";
 import Login from "../../components/Login";
 import MyReview from "../../components/MyReview";
@@ -14,6 +15,7 @@ const { createBrowserRouter } = require("react-router-dom");
 const router = createBrowserRouter([
     {
         path: '/',
+        errorElement: <Error></Error>,
         element: <Main></Main>,
         children: [
             {
