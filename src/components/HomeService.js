@@ -13,8 +13,8 @@ const HomeService = () => {
             .then(data => setServices(data));
     }, [])
     return (
-        <div >
-            <div className='text-center mb-6'>
+        <div className='w-10/12 mx-auto text-center' >
+            <div className='w-10/12 mx-auto'>
                 <p className='text-2xl font-bold text-orange-600'>Our Services</p>
                 <h2 className='text-5xl font-semibold'> Service We Provide</h2>
 
